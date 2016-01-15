@@ -109,7 +109,7 @@ let to_html fin fout =
 #include "CollapsibleLists.js"
   </script></head>
   <body onload=\"CollapsibleLists.apply();\">
-   <ul class=\"collapsibleList\">\n";
+   <ul class=\"collapsibleList treeView\">\n";
   List.iter (print_bookmark fout) (parse fin);
   fprintf fout "</ul></body></html>\n"
 ;;
