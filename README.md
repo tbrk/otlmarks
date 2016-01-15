@@ -20,7 +20,8 @@ browser (both Chrome and Safari, say).
 The `.otl` file can be synchronized between machines using git to track 
 history and resolve conflicts. This avoids both cross browser data loss due 
 to poor synchronization protocols and also sharing your private information 
-with a third party (other than Google if you needed `chromeotl`...).
+with a second party (other than Google if you already needed 
+`chromeotl`...).
 
 TODO
 ----
