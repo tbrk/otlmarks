@@ -1,10 +1,11 @@
 This project uses the following open source contributions:
 
 * [collapsible-lists](http://code.stephenmorley.org/javascript/collapsible-lists/)
-   licence: [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
+   licenced under
+  [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ------------------------------------------------------------------------------
-Copyright (c) 2016, Timothy Bourke
+Copyright (c) 2016, [Timothy Bourke](mailto:tim@tbrk.org)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -16,10 +17,6 @@ modification, are permitted provided that the following conditions are met:
 2. Redistributions in binary form must reproduce the above copyright notice,
    this list of conditions and the following disclaimer in the documentation
    and/or other materials provided with the distribution.
-
-3. Neither the name of Inria/UPMC nor the names of its contributors may be
-   used to endorse or promote products derived from this software without
-   specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
