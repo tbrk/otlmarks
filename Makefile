@@ -1,6 +1,6 @@
 
 OCAMLFIND=ocamlfind
-CPP=cpp -P -x c -w
+CPP=gcc -E -P -x c -w
 
 PACKAGES=netstring netsys
 NETLIBS=netsys_oothr.cma netsys.cma netstring.cma
