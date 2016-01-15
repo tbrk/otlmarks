@@ -26,5 +26,4 @@ with a second party (other than Google if you already needed
 TODO
 ----
 1. Improve the HTML output with CSS to make it prettier.
-2. Add Javascript to the HTML output to allow folded navigation.
 

@@ -21,6 +21,19 @@ type line =
 
 let fprintf = Printf.fprintf
 
+let cat fin fout =
+  let rec print_rev_list xs =
+    match xs with
+    | [] -> ()
+    | x::xs -> (print_rev_list xs; output_string fout x)
+  in
+  let lines = ref [] in
+  try
+    while true do
+      lines := input_line fin :: !lines
+    done
+  with End_of_file -> (print_rev_list !lines; close_in fin)
+
 let print_line fout (l, n) =
   match l with
   | ItemLine s    -> fprintf fout "%2d: Item    (%s)\n" n s
@@ -104,10 +117,14 @@ let to_html fin fout =
   <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
   <style>
   </style>
-</head>
-<body><dl>\n";
+  <script type=\"text/javascript\">";
+  cat (open_in "CollapsibleLists.js") fout;
+  fprintf fout
+"</script></head>
+ <body onload=\"CollapsibleLists.apply();\">
+   <ul class=\"collapsibleList\">\n";
   List.iter (print_bookmark fout) (parse fin);
-  fprintf fout "</dl></body></html>\n"
+  fprintf fout "</ul></body></html>\n"
 ;;
 
 if Array.length Sys.argv = 0
