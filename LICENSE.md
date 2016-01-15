@@ -1,8 +1,7 @@
 This project uses the following open source contributions:
 
-* collapsible-lists 
-  http://code.stephenmorley.org/javascript/collapsible-lists/
-  licence: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+* [collapsible-lists](http://code.stephenmorley.org/javascript/collapsible-lists/)
+   licence: [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 ------------------------------------------------------------------------------
 Copyright (c) 2016, Timothy Bourke
