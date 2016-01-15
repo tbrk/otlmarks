@@ -1,3 +1,4 @@
+(* Copyright (c) 2016 Timothy Bourke. All rights reserved. See LICENCE. *)
 
 type item = { name: string; href: string; comment: string option }
 type folder = { name: string; bookmarks: bookmark list }

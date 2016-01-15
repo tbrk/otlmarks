@@ -1,3 +1,5 @@
+(* Copyright (c) 2016 Timothy Bourke. All rights reserved. See LICENCE. *)
+
 (** simple html helpers *)
 
 let tagname (tn, _, _) = tn
