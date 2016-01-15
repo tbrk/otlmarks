@@ -1,5 +1,6 @@
 
 OCAMLFIND=ocamlfind
+CPP=cpp -P -x c -w
 
 PACKAGES=netstring netsys
 NETLIBS=netsys_oothr.cma netsys.cma netstring.cma
@@ -14,6 +15,7 @@ chromeotl: chromeotl.ml
 
 otlhtml: otlhtml.ml
 	$(OCAMLFIND) ocamlc -o $@ $(PACKAGES:%=-package %) \
+	    -pp '$(CPP)' \
 	    unix.cma bigarray.cma str.cma $(NETLIBS) $<
 
 opam:
