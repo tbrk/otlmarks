@@ -70,6 +70,7 @@ let parse fin =
               href, parse_comment n None (parse_line ())
           | next -> "", (None, next)
         in
+        let name = if name = "" then href else name in
         parse_at (Item { name; href; comment }::acc) n next
   in
   fst (parse_at [] 0 (parse_line ()))
