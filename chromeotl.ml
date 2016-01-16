@@ -80,7 +80,7 @@ let print_otl fout ele =
     match x with
     | Item { name; href } ->
         indent n; fprintf fout "* %s\n" (decode name);
-        indent n; fprintf fout "; %s\n" href
+        indent (n + 1); fprintf fout "; %s\n" href
     | Folder { name; bookmarks } ->
         indent n; fprintf fout "%s\n" (decode name);
         List.iter (go (n + 1)) bookmarks

@@ -67,8 +67,8 @@ let parse fin =
     | (ItemLine name, _) ->
         let href, (comment, next) =
           match parse_line () with
-          | (TextLine href, ln) when ln >= n ->
-              href, parse_comment n None (parse_line ())
+          | (TextLine href, ln) when ln > n ->
+              href, parse_comment ln None (parse_line ())
           | next -> "", (None, next)
         in
         let name = if name = "" then href else name in
@@ -113,7 +113,8 @@ let to_html fin fout =
   <body onload=\"CollapsibleLists.apply();\">
    <ul class=\"collapsibleList treeView\">\n";
   List.iter (print_bookmark fout) (parse fin);
-  fprintf fout "</ul></body></html>\n"
+  fprintf fout "</ul>";
+  fprintf fout "</body></html>\n"
 ;;
 
 if Array.length Sys.argv = 0
