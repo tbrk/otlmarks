@@ -82,11 +82,13 @@ let encode s = Netencoding.Html.encode ~in_enc:`Enc_utf8 ~out_enc:`Enc_utf8 () s
 let rec print_bookmark fout bm =
   match bm with
   | Folder {name; bookmarks } ->
-      fprintf fout "<li><div class=\"folder\"><h3>%s</h3>\n<ul>" name;
+      fprintf fout
+        "<li class=\"folder\"><div class=\"folder\"><h3>%s</h3>\n<ul>" name;
       List.iter (print_bookmark fout) bookmarks;
       fprintf fout "</ul></div></li>"
   | Item { name; href; comment } ->
-      fprintf fout "<li><div class=\"item\"><a href=\"%s\">%s</a>"
+      fprintf fout
+        "<li class=\"item\"><div class=\"item\"><a href=\"%s\">%s</a>"
         href (encode name);
       (match comment with None -> () | Some s ->
         fprintf fout "<div class=\"comment\">%s</div>" (encode s));
