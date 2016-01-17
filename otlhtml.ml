@@ -79,8 +79,19 @@ let parse fin =
 
 let encode s = Netencoding.Html.encode ~in_enc:`Enc_utf8 ~out_enc:`Enc_utf8 () s
 
+let only_hyphens s =
+  try
+    for i = 0 to String.length s - 1 do
+      if s.[i] <> ' ' && s.[i] <> '-' then raise Exit
+    done;
+    true
+  with Exit -> false
+  
+
 let rec print_bookmark fout bm =
   match bm with
+  | Folder {name; bookmarks=[] } when only_hyphens name ->
+      fprintf fout "<hr/>"
   | Folder {name; bookmarks } ->
       fprintf fout
         "<li class=\"folder\"><div class=\"folder\"><h3>%s</h3>\n<ul>" name;
