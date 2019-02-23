@@ -3,20 +3,20 @@ OCAMLFIND=ocamlfind
 CPP=gcc -E -P -x c -w
 
 PACKAGES=netstring netsys
-NETLIBS=netsys_oothr.cma netsys.cma netstring.cma
+NETLIBS=netsys_oothr.cmxa netsys.cmxa netstring.cmxa
 
 OBJS=chromeotl otlhtml
 
 all: $(OBJS)
 
 chromeotl: chromeotl.ml
-	$(OCAMLFIND) ocamlc -o $@ $(PACKAGES:%=-package %) \
-	    unix.cma bigarray.cma str.cma $(NETLIBS) $<
+	$(OCAMLFIND) ocamlopt -o $@ $(PACKAGES:%=-package %) \
+	    unix.cmxa bigarray.cmxa str.cmxa $(NETLIBS) $<
 
 otlhtml: otlhtml.ml
-	$(OCAMLFIND) ocamlc -o $@ $(PACKAGES:%=-package %) \
+	$(OCAMLFIND) ocamlopt -o $@ $(PACKAGES:%=-package %) \
 	    -pp '$(CPP)' \
-	    unix.cma bigarray.cma str.cma $(NETLIBS) $<
+	    unix.cmxa bigarray.cmxa str.cmxa $(NETLIBS) $<
 
 opam:
 	-opam install ocamlfind ocamlnet
