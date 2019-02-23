@@ -128,7 +128,7 @@ let to_html fin fout =
   fprintf fout "</body></html>\n"
 ;;
 
-if Array.length Sys.argv = 0
+if Array.length Sys.argv = 1
 then to_html stdin stdout
 else to_html (open_in Sys.argv.(1)) stdout;;
 
